@@ -1,807 +1,1068 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
 <title>O — The Eye. The Void. The Cycle.</title>
 
-<meta name="description" content="O is a fixed-supply Solana token. Mint authority revoked. Freeze authority none. Live on Raydium." />
-<meta name="theme-color" content="#000000" />
+<meta
+  name="description"
+  content="O is a fixed-supply token on Solana. The eye. The void. The cycle. Mint authority revoked. Freeze authority none."
+>
+
+<meta
+  name="keywords"
+  content="O, O token, Solana, Solana token, Raydium, cryptocurrency, OonSolana"
+>
+
+<meta name="author" content="O">
+
+<meta name="robots" content="index, follow">
+
+<link
+  rel="canonical"
+  href="https://benny0126.github.io/o-token/"
+>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="favicon.png"
+>
+
+<link
+  rel="manifest"
+  href="site.webmanifest"
+>
+
+
+<!-- OpenGraph -->
+
+<meta property="og:type" content="website">
+
+<meta
+  property="og:title"
+  content="O — The Eye. The Void. The Cycle."
+>
+
+<meta
+  property="og:description"
+  content="A fixed-supply token on Solana. Mint authority revoked. Freeze authority none."
+>
+
+<meta
+  property="og:url"
+  content="https://benny0126.github.io/o-token/"
+>
+
+<meta
+  property="og:image"
+  content="https://benny0126.github.io/o-token/logo.png"
+>
+
+<meta
+  property="og:site_name"
+  content="O"
+>
+
+
+<!-- Twitter / X -->
+
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+>
+
+<meta
+  name="twitter:title"
+  content="O — The Eye. The Void. The Cycle."
+>
+
+<meta
+  name="twitter:description"
+  content="Fixed supply on Solana. Mint authority revoked."
+>
+
+<meta
+  name="twitter:image"
+  content="https://benny0126.github.io/o-token/logo.png"
+>
+
 
 <style>
-:root{
-  --bg:#000000;
-  --bg-soft:#070707;
-  --card:#0d0d0d;
-  --line:#1d1d1d;
-  --text:#ffffff;
-  --muted:#a0a0a0;
-  --soft:#7c7c7c;
-  --accent:#ffffff;
-  --accent-dark:#000000;
-  --glow:rgba(255,255,255,.08);
-}
 
-*{
-  box-sizing:border-box;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,.06), transparent 22%),
-    linear-gradient(180deg,#010101 0%, #000 100%);
-  color:var(--text);
-  font-family:Arial, Helvetica, sans-serif;
-  line-height:1.5;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
+body {
+    background:
+        radial-gradient(
+            circle at 50% -20%,
+            #222 0,
+            #080808 35%,
+            #000 70%
+        );
 
-.container{
-  width:min(1120px, calc(100% - 32px));
-  margin:0 auto;
-}
+    color: #f5f5f5;
 
-header{
-  position:sticky;
-  top:0;
-  z-index:30;
-  backdrop-filter:blur(10px);
-  background:rgba(0,0,0,.72);
-  border-bottom:1px solid rgba(255,255,255,.05);
-}
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  min-height:72px;
-  gap:16px;
-}
+    line-height: 1.6;
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  font-weight:700;
-  letter-spacing:5px;
-  font-size:18px;
+    min-height: 100vh;
 }
 
-.brand-mark{
-  width:34px;
-  height:34px;
-  border:5px solid #fff;
-  border-radius:50%;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.nav-links a{
-  color:var(--muted);
-  font-size:14px;
-  padding:10px 12px;
-  border-radius:10px;
-  transition:.2s ease;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.nav-links a:hover{
-  color:#fff;
-  background:rgba(255,255,255,.06);
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
 }
 
-.hero{
-  padding:80px 0 60px;
-  text-align:center;
-}
+nav {
+    padding: 24px 0;
 
-.hero-logo{
-  width:220px;
-  height:220px;
-  border:26px solid #fff;
-  border-radius:50%;
-  margin:0 auto 28px;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 60px var(--glow);
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 16px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:999px;
-  color:#dcdcdc;
-  font-size:13px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  background:rgba(255,255,255,.03);
-  margin-bottom:22px;
-}
-
-.badge-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#ffffff;
-  box-shadow:0 0 12px rgba(255,255,255,.7);
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-h1{
-  margin:0;
-  font-size:84px;
-  letter-spacing:14px;
-  line-height:1;
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
 }
 
-.hero-sub{
-  margin:18px auto 0;
-  max-width:760px;
-  color:#dddddd;
-  font-size:18px;
-  letter-spacing:4px;
-  text-transform:uppercase;
-}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-.hero-desc{
-  max-width:780px;
-  margin:26px auto 0;
-  color:var(--muted);
-  font-size:17px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
-.cta-row{
-  margin-top:36px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:14px;
+.brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:170px;
-  padding:14px 20px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.14);
-  transition:.2s ease;
-  font-weight:700;
-  letter-spacing:.5px;
-  cursor:pointer;
-}
+.nav-links {
+    display: flex;
+    gap: 22px;
 
-.btn-primary{
-  background:#fff;
-  color:#000;
+    font-size: 14px;
+    color: #aaa;
 }
 
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(255,255,255,.12);
-}
+.hero {
+    min-height: 75vh;
 
-.btn-secondary{
-  background:rgba(255,255,255,.04);
-  color:#fff;
-}
+    display: flex;
+    align-items: center;
 
-.btn-secondary:hover{
-  background:rgba(255,255,255,.08);
-  transform:translateY(-2px);
+    padding: 90px 0 70px;
 }
 
-.quick-stats{
-  margin-top:46px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-}
+.hero-grid {
+    width: 100%;
 
-.stat{
-  background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:18px;
-  padding:22px 18px;
-  text-align:left;
-}
+    display: grid;
 
-.stat-label{
-  color:var(--soft);
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(280px, .6fr);
 
-.stat-value{
-  margin-top:8px;
-  font-size:20px;
-  font-weight:700;
-  word-break:break-word;
-}
+    gap: 60px;
 
-.section{
-  padding:30px 0 30px;
+    align-items: center;
 }
 
-.section-head{
-  text-align:center;
-  margin-bottom:26px;
-}
+.badge {
+    display: inline-flex;
 
-.section-kicker{
-  color:#9b9b9b;
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
+    align-items: center;
 
-.section-title{
-  margin-top:10px;
-  font-size:38px;
-  letter-spacing:3px;
-}
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border:
+        1px solid rgba(255,255,255,.15);
 
-.section-text{
-  margin:14px auto 0;
-  max-width:760px;
-  color:var(--muted);
-  font-size:16px;
+    border-radius: 999px;
+
+    color: #bbb;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
 }
+
+.dot {
+    width: 7px;
+    height: 7px;
+
+    background: #fff;
 
-.grid-2{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:18px;
+    border-radius: 50%;
 }
 
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:22px;
-  padding:24px;
+h1 {
+    font-size:
+        clamp(
+            74px,
+            14vw,
+            170px
+        );
+
+    line-height: .8;
+
+    letter-spacing: -.08em;
+
+    font-weight: 700;
 }
+
+.tagline {
+    font-size:
+        clamp(
+            20px,
+            3vw,
+            34px
+        );
+
+    margin-top: 35px;
 
-.card h3{
-  margin:0 0 14px;
-  font-size:20px;
-  letter-spacing:1px;
+    letter-spacing: -.02em;
 }
 
-.card p{
-  margin:0;
-  color:var(--muted);
+.subtext {
+    margin-top: 18px;
+
+    color: #888;
+
+    max-width: 620px;
+
+    font-size: 16px;
 }
 
-.list{
-  display:grid;
-  gap:14px;
+.hero-logo {
+    display: flex;
+    justify-content: center;
 }
+
+.hero-logo img {
+    width: min(320px, 90%);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
 
-.list-item{
-  padding:15px 16px;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:14px;
-  background:rgba(255,255,255,.02);
+    box-shadow:
+        0 0 100px
+        rgba(255,255,255,.08);
 }
 
-.list-item strong{
-  display:block;
-  margin-bottom:5px;
-  font-size:14px;
-  letter-spacing:1px;
-  text-transform:uppercase;
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 35px;
 }
+
+.button {
+    padding: 13px 20px;
+
+    border-radius: 999px;
+
+    border:
+        1px solid rgba(255,255,255,.18);
 
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
+    transition: .2s;
+
+    font-size: 14px;
 }
 
-.info-box{
-  border:1px solid rgba(255,255,255,.06);
-  background:rgba(255,255,255,.02);
-  border-radius:16px;
-  padding:18px;
+.button.primary {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
 }
 
-.info-box .label{
-  color:var(--soft);
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
+.button:hover {
+    transform: translateY(-2px);
+    border-color: #fff;
 }
 
-.info-box .value{
-  margin-top:8px;
-  font-size:15px;
-  color:#fff;
-  word-break:break-word;
+section {
+    padding: 80px 0;
 }
+
+.section-title {
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .16em;
+
+    color: #666;
 
-.code{
-  font-family:monospace;
-  word-break:break-all;
+    margin-bottom: 30px;
 }
 
-.how-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
 }
+
+.card {
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius: 20px;
 
-.step{
-  padding:22px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,.06);
-  background:rgba(255,255,255,.02);
+    padding: 24px;
+
+    min-height: 145px;
 }
+
+.card small {
+    color: #666;
 
-.step-num{
-  width:34px;
-  height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  border:1px solid rgba(255,255,255,.16);
-  font-size:14px;
-  margin-bottom:14px;
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+    font-size: 11px;
 }
+
+.card strong {
+    display: block;
 
-.step h4{
-  margin:0 0 8px;
-  font-size:18px;
+    margin-top: 8px;
+
+    font-size: 20px;
+
+    word-break: break-word;
 }
 
-.step p{
-  margin:0;
-  color:var(--muted);
-  font-size:15px;
+.card p {
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 13px;
 }
+
+.address {
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
 
-.links-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+    font-size: 13px !important;
+
+    line-height: 1.6;
+
+    word-break: break-all;
 }
 
-.link-card{
-  display:block;
-  padding:18px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.06);
-  background:rgba(255,255,255,.02);
-  transition:.2s ease;
+.fact-yes {
+    font-size: 25px !important;
 }
+
+.quote {
+    text-align: center;
+
+    font-size:
+        clamp(
+            30px,
+            6vw,
+            70px
+        );
+
+    line-height: 1.05;
 
-.link-card:hover{
-  transform:translateY(-3px);
-  background:rgba(255,255,255,.05);
+    letter-spacing: -.04em;
+
+    padding:
+        110px 0;
 }
+
+.tokenomics {
+    display: grid;
 
-.link-card-title{
-  font-size:15px;
-  font-weight:700;
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
 }
+
+.links-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
 
-.link-card-sub{
-  margin-top:7px;
-  color:var(--muted);
-  font-size:13px;
+    gap: 12px;
 }
 
-.copy-box{
-  margin-top:18px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+.link-card {
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    transition: .2s;
 }
 
-.copy-input{
-  flex:1;
-  min-width:260px;
-  border:1px solid rgba(255,255,255,.08);
-  background:#050505;
-  color:#fff;
-  border-radius:12px;
-  padding:14px 16px;
-  font-family:monospace;
+.link-card:hover {
+    background:
+        rgba(255,255,255,.05);
+
+    transform:
+        translateY(-2px);
 }
 
-.copy-btn{
-  border:none;
+.link-card strong {
+    display: block;
 }
 
-.notice{
-  margin-top:16px;
-  color:var(--muted);
-  font-size:13px;
+.link-card small {
+    color: #777;
 }
 
-footer{
-  padding:70px 0 50px;
-  text-align:center;
-  color:#7e7e7e;
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
+.copy {
+    cursor: pointer;
 }
 
-@media (max-width: 960px){
-  .quick-stats{
-    grid-template-columns:repeat(2,1fr);
-  }
+footer {
+    border-top:
+        1px solid rgba(255,255,255,.08);
 
-  .grid-2{
-    grid-template-columns:1fr;
-  }
+    padding: 45px 0 55px;
 
-  .links-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+    color: #666;
 
-  .how-grid{
-    grid-template-columns:1fr;
-  }
+    font-size: 13px;
 
-  h1{
-    font-size:62px;
-    letter-spacing:10px;
-  }
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
+
+.warning {
+    padding: 18px 20px;
 
-@media (max-width: 640px){
-  .hero{
-    padding-top:56px;
-  }
+    border:
+        1px solid rgba(255,255,255,.08);
 
-  .hero-logo{
-    width:170px;
-    height:170px;
-    border-width:20px;
-  }
+    border-radius: 15px;
 
-  h1{
-    font-size:48px;
-    letter-spacing:8px;
-  }
+    color: #888;
 
-  .hero-sub{
-    font-size:14px;
-    letter-spacing:3px;
-  }
+    font-size: 13px;
 
-  .quick-stats{
-    grid-template-columns:1fr;
-  }
+    margin-top: 30px;
+}
+
+@media (
+    max-width: 800px
+) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .info-grid{
-    grid-template-columns:1fr;
-  }
+    .hero-logo {
+        order: -1;
+    }
 
-  .links-grid{
-    grid-template-columns:1fr;
-  }
+    .hero-logo img {
+        width: 190px;
+    }
 
-  .nav{
-    flex-direction:column;
-    justify-content:center;
-    padding:12px 0;
-  }
+    .grid,
+    .tokenomics,
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+    }
 }
+
 </style>
+
 </head>
+
+
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="brand">
-      <div class="brand-mark"></div>
-      <div>O</div>
-    </div>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#facts">Facts</a>
-      <a href="#buy">How to Buy</a>
-      <a href="#links">Links</a>
-    </div>
-  </div>
+<div class="container">
+
+
+<nav>
+
+<div class="brand">
+
+<img
+  src="logo.png"
+  alt="O token logo"
+>
+
+<span>O</span>
+
+</div>
+
+
+<div class="nav-links">
+
+<a href="#facts">
+Facts
+</a>
+
+<a href="#tokenomics">
+Tokenomics
+</a>
+
+<a href="#links">
+Links
+</a>
+
+<a
+  href="https://x.com/OonSolana"
+  target="_blank"
+>
+X
+</a>
+
+</div>
+
+</nav>
+
+
+<header class="hero">
+
+<div class="hero-grid">
+
+
+<div>
+
+<div class="badge">
+
+<span class="dot"></span>
+
+LIVE ON SOLANA
+
+</div>
+
+
+<h1>O</h1>
+
+
+<div class="tagline">
+
+THE EYE.<br>
+THE VOID.<br>
+THE CYCLE.
+
+</div>
+
+
+<p class="subtext">
+
+O is a fixed-supply token on Solana Mainnet.
+Simple by design. Publicly verifiable on-chain.
+
+</p>
+
+
+<div class="buttons">
+
+<a
+  class="button primary"
+  href="https://raydium.io/swap/?inputMint=sol&outputMint=E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P"
+  target="_blank"
+>
+Trade O
+</a>
+
+<a
+  class="button"
+  href="https://dexscreener.com/solana/72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR"
+  target="_blank"
+>
+View Chart
+</a>
+
+<a
+  class="button"
+  href="https://solscan.io/token/E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P"
+  target="_blank"
+>
+Verify On-chain
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-logo">
+
+<img
+  src="logo.png"
+  alt="O — The Eye. The Void. The Cycle."
+>
+
+</div>
+
+
+</div>
+
 </header>
 
-<section class="hero">
-  <div class="container">
 
-    <div class="hero-logo"></div>
 
-    <div class="badge">
-      <span class="badge-dot"></span>
-      LIVE ON SOLANA
-    </div>
+<section id="facts">
 
-    <h1>O</h1>
+<div class="section-title">
 
-    <div class="hero-sub">
-      THE EYE · THE VOID · THE CYCLE
-    </div>
+ON-CHAIN FACTS
 
-    <div class="hero-desc">
-      O is a fixed-supply token on Solana. Minimal in form, sharp in identity,
-      and live with public liquidity on Raydium.
-    </div>
+</div>
 
-    <div class="cta-row">
-      <a class="btn btn-primary" target="_blank" href="https://raydium.io/swap/?inputMint=sol&outputMint=E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P">Trade O</a>
-      <a class="btn btn-secondary" target="_blank" href="https://dexscreener.com/solana/72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR">View Chart</a>
-      <a class="btn btn-secondary" target="_blank" href="https://solscan.io/token/E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P">Explorer</a>
-    </div>
 
-    <div class="quick-stats">
-      <div class="stat">
-        <div class="stat-label">Total Supply</div>
-        <div class="stat-value">1,000,000,000 O</div>
-      </div>
+<div class="grid">
 
-      <div class="stat">
-        <div class="stat-label">Network</div>
-        <div class="stat-value">Solana Mainnet</div>
-      </div>
 
-      <div class="stat">
-        <div class="stat-label">Mint Authority</div>
-        <div class="stat-value">Revoked</div>
-      </div>
+<div class="card">
 
-      <div class="stat">
-        <div class="stat-label">Freeze Authority</div>
-        <div class="stat-value">None</div>
-      </div>
-    </div>
+<small>
+Network
+</small>
 
-  </div>
+<strong>
+Solana
+</strong>
+
+<p>
+Mainnet
+</p>
+
+</div>
+
+
+<div class="card">
+
+<small>
+Total Supply
+</small>
+
+<strong>
+1000000000 O
+</strong>
+
+<p>
+9 decimals
+</p>
+
+</div>
+
+
+<div class="card">
+
+<small>
+Mint Authority
+</small>
+
+<strong class="fact-yes">
+Revoked
+</strong>
+
+<p>
+No additional O can be minted.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<small>
+Freeze Authority
+</small>
+
+<strong class="fact-yes">
+None
+</strong>
+
+<p>
+No freeze authority is configured.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<small>
+Liquidity
+</small>
+
+<strong>
+Raydium CPMM
+</strong>
+
+<p>
+O / SOL public liquidity pool.
+</p>
+
+</div>
+
+
+<div
+  class="card copy"
+  onclick="copyCA()"
+>
+
+<small>
+Contract Address · Click to copy
+</small>
+
+<strong class="address">
+
+E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P
+
+</strong>
+
+<p id="copy-status">
+Official Solana mint.
+</p>
+
+</div>
+
+
+</div>
+
 </section>
 
-<section class="section" id="about">
-  <div class="container">
 
-    <div class="section-head">
-      <div class="section-kicker">Identity</div>
-      <div class="section-title">What is O?</div>
-      <div class="section-text">
-        O is built around a clear, minimal idea: a recognizable symbol, a fixed supply,
-        and a public on-chain presence. It is not overloaded with noise.
-        It is designed to be simple, memorable, and visible.
-      </div>
-    </div>
 
-    <div class="grid-2">
-      <div class="card">
-        <h3>Concept</h3>
-        <p>
-          The form is simple: a circle. A mark that can mean eye, void, cycle,
-          origin, or return. O is made to feel iconic at a glance.
-        </p>
-        <div class="list" style="margin-top:18px;">
-          <div class="list-item">
-            <strong>Minimal</strong>
-            Clean identity, direct presentation, no visual clutter.
-          </div>
-          <div class="list-item">
-            <strong>Fixed Supply</strong>
-            Total supply is capped. Mint authority has been revoked.
-          </div>
-          <div class="list-item">
-            <strong>Live Market</strong>
-            O is tradable on Raydium and indexed on public market trackers.
-          </div>
-        </div>
-      </div>
+<div class="quote">
 
-      <div class="card">
-        <h3>Core Status</h3>
-        <div class="info-grid">
-          <div class="info-box">
-            <div class="label">Symbol</div>
-            <div class="value">O</div>
-          </div>
+O exists.<br>
+◯
 
-          <div class="info-box">
-            <div class="label">Decimals</div>
-            <div class="value">9</div>
-          </div>
+</div>
 
-          <div class="info-box">
-            <div class="label">Mint</div>
-            <div class="value code">E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P</div>
-          </div>
 
-          <div class="info-box">
-            <div class="label">Raydium Pool</div>
-            <div class="value code">72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  </div>
+<section id="tokenomics">
+
+<div class="section-title">
+TOKENOMICS
+</div>
+
+
+<div class="tokenomics">
+
+
+<div class="card">
+
+<small>
+Supply
+</small>
+
+<strong>
+1000000000 O
+</strong>
+
+<p>
+Fixed supply. Mint authority permanently revoked.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<small>
+Initial Liquidity
+</small>
+
+<strong>
+10,000,000 O
+</strong>
+
+<p>
+Initial O allocation deposited into the Raydium O/SOL pool.
+Pool balances can change through trading and liquidity activity.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="warning">
+
+Project-held tokens are not represented as independently
+distributed circulating holders. On-chain balances and pool
+activity should always be independently verified.
+
+</div>
+
 </section>
 
-<section class="section" id="facts">
-  <div class="container">
 
-    <div class="section-head">
-      <div class="section-kicker">Transparency</div>
-      <div class="section-title">On-Chain Facts</div>
-      <div class="section-text">
-        Clear information matters. These are the public facts that define O.
-      </div>
-    </div>
 
-    <div class="grid-2">
-      <div class="card">
-        <h3>Token Facts</h3>
-        <div class="list">
-          <div class="list-item">
-            <strong>Network</strong>
-            Solana Mainnet
-          </div>
-          <div class="list-item">
-            <strong>Total Supply</strong>
-            1,000,000,000 O
-          </div>
-          <div class="list-item">
-            <strong>Mint Authority</strong>
-            Revoked
-          </div>
-          <div class="list-item">
-            <strong>Freeze Authority</strong>
-            None
-          </div>
-          <div class="list-item">
-            <strong>Initial Raydium Liquidity</strong>
-            10,000,000 O paired with 0.10 SOL
-          </div>
-        </div>
-      </div>
+<section id="links">
 
-      <div class="card">
-        <h3>Contract</h3>
-        <p>
-          Use the official mint address below when viewing or trading O.
-        </p>
+<div class="section-title">
+EXPLORE O
+</div>
 
-        <div class="copy-box">
-          <input id="contractInput" class="copy-input" readonly value="E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P" />
-          <button class="btn btn-primary copy-btn" onclick="copyContract()">Copy Contract</button>
-        </div>
 
-        <div id="copyStatus" class="notice">
-          Official Solana mint address.
-        </div>
-      </div>
-    </div>
+<div class="links-grid">
 
-  </div>
+
+<a
+  class="link-card"
+  href="https://raydium.io/swap/?inputMint=sol&outputMint=E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P"
+  target="_blank"
+>
+
+<strong>
+Raydium
+</strong>
+
+<small>
+Trade O / SOL
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="https://dexscreener.com/solana/72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR"
+  target="_blank"
+>
+
+<strong>
+DexScreener
+</strong>
+
+<small>
+Market data
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="https://www.geckoterminal.com/solana/pools/72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR"
+  target="_blank"
+>
+
+<strong>
+GeckoTerminal
+</strong>
+
+<small>
+Pool analytics
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="https://solscan.io/token/E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P"
+  target="_blank"
+>
+
+<strong>
+Solscan
+</strong>
+
+<small>
+On-chain explorer
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="https://x.com/OonSolana"
+  target="_blank"
+>
+
+<strong>
+X / Twitter
+</strong>
+
+<small>
+@OonSolana
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="token.json"
+  target="_blank"
+>
+
+<strong>
+Token JSON
+</strong>
+
+<small>
+Public project data
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="status.json"
+  target="_blank"
+>
+
+<strong>
+Status
+</strong>
+
+<small>
+Latest project snapshot
+</small>
+
+</a>
+
+
+<a
+  class="link-card"
+  href="sitemap.xml"
+  target="_blank"
+>
+
+<strong>
+Sitemap
+</strong>
+
+<small>
+Search indexing
+</small>
+
+</a>
+
+
+</div>
+
 </section>
 
-<section class="section" id="buy">
-  <div class="container">
 
-    <div class="section-head">
-      <div class="section-kicker">Guide</div>
-      <div class="section-title">How to Buy O</div>
-      <div class="section-text">
-        A simple path to access O from the public market.
-      </div>
-    </div>
-
-    <div class="how-grid">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h4>Prepare SOL</h4>
-        <p>
-          Use a Solana wallet such as Phantom or Solflare, then fund it with SOL.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">2</div>
-        <h4>Open Raydium</h4>
-        <p>
-          Connect your wallet and open the official Raydium swap link for O.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">3</div>
-        <h4>Swap SOL for O</h4>
-        <p>
-          Swap SOL into O. Always double-check the official mint before confirming.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="links">
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-kicker">Explore</div>
-      <div class="section-title">Public Links</div>
-      <div class="section-text">
-        Follow O across charts, explorers, and trading venues.
-      </div>
-    </div>
-
-    <div class="links-grid">
-      <a class="link-card" target="_blank" href="https://raydium.io/swap/?inputMint=sol&outputMint=E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P">
-        <div class="link-card-title">Raydium</div>
-        <div class="link-card-sub">Trade O on Solana.</div>
-      </a>
-
-      <a class="link-card" target="_blank" href="https://dexscreener.com/solana/72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR">
-        <div class="link-card-title">DexScreener</div>
-        <div class="link-card-sub">Live chart and market activity.</div>
-      </a>
-
-      <a class="link-card" target="_blank" href="https://www.geckoterminal.com/solana/pools/72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR">
-        <div class="link-card-title">GeckoTerminal</div>
-        <div class="link-card-sub">Pool analytics and price tracking.</div>
-      </a>
-
-      <a class="link-card" target="_blank" href="https://x.com/OonSolana">
-        <div class="link-card-title">X / Twitter</div>
-        <div class="link-card-sub">Official O account.</div>
-      </a>
-
-
-      <a class="link-card" target="_blank" href="https://solscan.io/token/E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P">
-        <div class="link-card-title">Solscan</div>
-        <div class="link-card-sub">On-chain token explorer.</div>
-      </a>
-    </div>
-
-  </div>
-</section>
 
 <footer>
-  O EXISTS · SOLANA MAINNET
+
+<div>
+
+O.<br>
+The eye. The void. The cycle.
+
+</div>
+
+
+<div>
+
+Solana Mainnet<br>
+Mint: E9y4Em3E...j2UBsx3P
+
+</div>
+
 </footer>
 
-<script>
-function copyContract() {
-  const input = document.getElementById("contractInput");
-  const status = document.getElementById("copyStatus");
 
-  navigator.clipboard.writeText(input.value)
-    .then(() => {
-      status.textContent = "Contract copied successfully.";
-    })
-    .catch(() => {
-      status.textContent = "Copy failed. Please copy manually.";
-    });
+</div>
+
+
+<script>
+
+function copyCA() {
+
+    const mint =
+        "E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P";
+
+    navigator.clipboard
+        .writeText(mint)
+        .then(() => {
+
+            const el =
+                document.getElementById(
+                    "copy-status"
+                );
+
+            el.innerText =
+                "Contract copied ✓";
+
+            setTimeout(
+                () => {
+                    el.innerText =
+                        "Official Solana mint.";
+                },
+                1800
+            );
+
+        });
+
 }
+
 </script>
+
 
 </body>
 </html>

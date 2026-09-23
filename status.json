@@ -1,0 +1,14 @@
+{
+  "project": "O",
+  "network": "Solana Mainnet",
+  "mint": "E9y4Em3E8yNQUVYHfQEAT9ZK3wbVzgXUBLJhj2UBsx3P",
+  "pool": "72rLfPkwAG1WyyEzmGZXc6qfUrZRUTwGf53krawv6wdR",
+  "total_supply": 1000000000,
+  "project_wallet": "6pXd5sYzE61M93qJgddVkRUkYimdTEPvgjaezpezZeTB",
+  "project_token_balance": 990000000,
+  "project_sol_balance": 0.052889221,
+  "mint_authority": "revoked",
+  "freeze_authority": "none",
+  "snapshot_utc": "2026-09-23T06:37:13Z",
+  "note": "This is a point-in-time snapshot generated from the project maintenance script."
+}

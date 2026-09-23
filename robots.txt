@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://benny0126.github.io/o-token/sitemap.xml
